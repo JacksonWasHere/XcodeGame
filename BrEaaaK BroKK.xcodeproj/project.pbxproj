@@ -15,6 +15,7 @@
 		75D303D2207E6BDF0028AAA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D303D0207E6BDF0028AAA8 /* Main.storyboard */; };
 		75D303D4207E6BDF0028AAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D303D3207E6BDF0028AAA8 /* Assets.xcassets */; };
 		75D303D7207E6BDF0028AAA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D303D5207E6BDF0028AAA8 /* LaunchScreen.storyboard */; };
+		75D303EB207E75D60028AAA8 /* Block.sks in Resources */ = {isa = PBXBuildFile; fileRef = 75D303EA207E75D60028AAA8 /* Block.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		75D303D3207E6BDF0028AAA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75D303D6207E6BDF0028AAA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75D303D8207E6BDF0028AAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75D303EA207E75D60028AAA8 /* Block.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Block.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				75D303C6207E6BDF0028AAA8 /* AppDelegate.swift */,
 				75D303C8207E6BDF0028AAA8 /* GameScene.sks */,
 				75D303CA207E6BDF0028AAA8 /* Actions.sks */,
+				75D303EA207E75D60028AAA8 /* Block.sks */,
 				75D303CC207E6BDF0028AAA8 /* GameScene.swift */,
 				75D303CE207E6BDF0028AAA8 /* GameViewController.swift */,
 				75D303D0207E6BDF0028AAA8 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 				75D303D2207E6BDF0028AAA8 /* Main.storyboard in Resources */,
 				75D303C9207E6BDF0028AAA8 /* GameScene.sks in Resources */,
 				75D303D4207E6BDF0028AAA8 /* Assets.xcassets in Resources */,
+				75D303EB207E75D60028AAA8 /* Block.sks in Resources */,
 				75D303D7207E6BDF0028AAA8 /* LaunchScreen.storyboard in Resources */,
 				75D303CB207E6BDF0028AAA8 /* Actions.sks in Resources */,
 			);
