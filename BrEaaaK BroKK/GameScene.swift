@@ -13,15 +13,26 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     var paddle:SKSpriteNode!
     var ball:SKSpriteNode!
+    var bottom:SKNode!
     
     let rows = 4
     let perRow = 5
     let width = 500
     let height = 300
     
-    var cam: SKCameraNode?
+    let ballCat:UInt32 = 1
+    let paddleCat:UInt32 = 2
+    let brickCat:UInt32 = 4
+    let bottomCat:UInt32 = 8
+    
+    var playerDead = false
+    var didWin = false
+    var score = 0
+    
     
     override func didMove(to view: SKView) {
+        self.physicsWorld.contactDelegate=self
+        
         scene?.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody?.linearDamping=0
         self.physicsBody?.friction=0
@@ -29,12 +40,19 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         self.physicsBody?.restitution=1
         self.physicsBody?.isDynamic=false
         
-        cam = SKCameraNode()
-        self.camera = cam
-        self.addChild(cam!)
+        bottom = SKNode()
+        bottom.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -self.frame.width/2, y: -self.frame.height/2+1), to: CGPoint(x: self.frame.width/2, y: -self.frame.height/2+1))
+        bottom.physicsBody?.categoryBitMask = bottomCat
+        bottom.physicsBody?.contactTestBitMask = ballCat
+        self.addChild(bottom)
         
         ball = self.childNode(withName: "ball") as! SKSpriteNode
+        ball.physicsBody?.categoryBitMask = ballCat
+        ball.physicsBody?.contactTestBitMask = paddleCat | brickCat | bottomCat
+        
         paddle = self.childNode(withName: "paddle") as! SKSpriteNode
+        paddle.physicsBody?.categoryBitMask = paddleCat
+        paddle.physicsBody?.contactTestBitMask = ballCat
         
         for i in 0..<rows {
             for j in 0..<perRow {
@@ -49,18 +67,29 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         let scene:SKScene = SKScene(fileNamed: "Block")!
         let brock = scene.childNode(withName: "brock")!
         
+        brock.physicsBody?.categoryBitMask = brickCat
+        brock.physicsBody?.contactTestBitMask = ballCat
+        
         brock.position = CGPoint(x: x, y: y)
         brock.move(toParent: self)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-//        var bodyA = contact.bodyA.node?.name=="paddle" ? contact.bodyA : contact.bodyB
-//        var bodyB = contact.bodyA.node?.name=="paddle" ? contact.bodyB : contact.bodyA
-//        var distance = (bodyA.node?.position.x)! - (bodyB.node?.position.x)!
-//        var speed = distance*5
-//        print(speed)
-//        bodyB.node?.physicsBody?.velocity = CGVector(dx: speed, dy: 200)
-//
+        
+        if contact.bodyA.categoryBitMask == ballCat || contact.bodyB.categoryBitMask == ballCat {
+            
+            let ballObj = contact.bodyA.contactTestBitMask==ballCat ? contact.bodyA : contact.bodyB
+            
+            if contact.bodyA.categoryBitMask == brickCat || contact.bodyB.categoryBitMask == brickCat {
+                let brockObj = contact.bodyA.categoryBitMask==ballCat ? contact.bodyB : contact.bodyA
+                brockObj.node?.removeFromParent()
+            }
+            
+            else if contact.bodyA.categoryBitMask == bottomCat || contact.bodyB.categoryBitMask == bottomCat {
+                let bottomBlock = contact.bodyA.categoryBitMask==ballCat ? contact.bodyB : contact.bodyA
+                self.view?.presentScene(SKScene(fileNamed: "deadScene"))
+            }
+        }
     }
     
     func touchDown(atPoint pos : CGPoint) {

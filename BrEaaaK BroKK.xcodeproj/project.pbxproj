@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		759F9442208A3E6F00E29EAF /* DeadScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 759F9441208A3E6F00E29EAF /* DeadScene.sks */; };
+		759F9444208A3EB000E29EAF /* Winner.sks in Resources */ = {isa = PBXBuildFile; fileRef = 759F9443208A3EB000E29EAF /* Winner.sks */; };
 		75D303C7207E6BDF0028AAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D303C6207E6BDF0028AAA8 /* AppDelegate.swift */; };
 		75D303C9207E6BDF0028AAA8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 75D303C8207E6BDF0028AAA8 /* GameScene.sks */; };
 		75D303CB207E6BDF0028AAA8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 75D303CA207E6BDF0028AAA8 /* Actions.sks */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		759F9441208A3E6F00E29EAF /* DeadScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DeadScene.sks; sourceTree = "<group>"; };
+		759F9443208A3EB000E29EAF /* Winner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Winner.sks; sourceTree = "<group>"; };
 		75D303C3207E6BDF0028AAA8 /* BrEaaaK BroKK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BrEaaaK BroKK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D303C6207E6BDF0028AAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D303C8207E6BDF0028AAA8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				75D303CA207E6BDF0028AAA8 /* Actions.sks */,
 				75D303EA207E75D60028AAA8 /* Block.sks */,
 				75D303CC207E6BDF0028AAA8 /* GameScene.swift */,
+				759F9441208A3E6F00E29EAF /* DeadScene.sks */,
+				759F9443208A3EB000E29EAF /* Winner.sks */,
 				75D303CE207E6BDF0028AAA8 /* GameViewController.swift */,
 				75D303D0207E6BDF0028AAA8 /* Main.storyboard */,
 				75D303D3207E6BDF0028AAA8 /* Assets.xcassets */,
@@ -139,7 +145,9 @@
 				75D303C9207E6BDF0028AAA8 /* GameScene.sks in Resources */,
 				75D303D4207E6BDF0028AAA8 /* Assets.xcassets in Resources */,
 				75D303EB207E75D60028AAA8 /* Block.sks in Resources */,
+				759F9444208A3EB000E29EAF /* Winner.sks in Resources */,
 				75D303D7207E6BDF0028AAA8 /* LaunchScreen.storyboard in Resources */,
+				759F9442208A3E6F00E29EAF /* DeadScene.sks in Resources */,
 				75D303CB207E6BDF0028AAA8 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
